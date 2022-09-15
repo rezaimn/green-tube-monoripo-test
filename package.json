@@ -3,8 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start:app-1":"ng serve --project=app-1 --port 4000",
+    "start:app-2":"ng serve --project=app-2 --port 4100",
+    "start:app-3":"ng serve --project=app-3 --port 4300",
+    "start:base-code":"ng serve --project=base-code --port 4400",
+    "build:app-1":"ng build --project=app-1 --prod",
+    "build:app-2":"ng build --project=app-2 --prod",
+    "build:app-3":"ng build --project=app-3 --prod",
+    "build:base-code":"ng build --project=base-code --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -23,6 +29,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^14.1.3",
     "@angular/cli": "~14.1.3",
     "@angular/compiler-cli": "^14.1.0",
     "@types/jasmine": "~4.0.0",
@@ -32,6 +39,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ng-packagr": "^14.1.0",
     "typescript": "~4.7.2"
   }
 }

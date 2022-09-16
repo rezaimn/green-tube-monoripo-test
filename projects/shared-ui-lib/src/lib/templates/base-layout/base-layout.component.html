@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="header">
+    <ng-content select="[id=header]"></ng-content>
+  </div>
+  <div class="middle-part">
+    <div class="sidebar">
+      <ng-content select="[id=sidebar]"></ng-content>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="footer">
+    <ng-content select="[id=footer]"></ng-content>
+  </div>
+</div>

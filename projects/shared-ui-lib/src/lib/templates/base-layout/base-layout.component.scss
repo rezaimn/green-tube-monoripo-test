@@ -1,0 +1,31 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  .header {
+    height: 80px;
+    width: 100vw;
+    background: green;
+  }
+  .middle-part{
+    height: calc( 100vh - 160px );
+    width: 100vw;
+    display: flex;
+    .sidebar{
+      width: 300px;
+      height: 100%;
+      background: red;
+    }
+    .content{
+      width: calc( 100vw - 300px );
+      height: 100%;
+      background: blue;
+      padding: 30px;
+    }
+  }
+  .footer{
+    height: 80px;
+    width: 100vw;
+    background: orange;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedUiTranslatorService} from "../../utils/shared-ui-translator.service";
 
 @Component({
   selector: 'lib-button',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(public translator: SharedUiTranslatorService) { }
 
   ngOnInit(): void {
   }

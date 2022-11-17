@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { SharedUiLibComponent } from './shared-ui-lib.component';
+import {ModuleWithProviders, NgModule, Provider} from '@angular/core';
+import {SharedUiLibComponent} from './shared-ui-lib.component';
 import {AvatarModule} from "./atoms/avatar";
 import {ButtonModule} from "./atoms/button";
 import {CardModule} from "./molecules/card";
@@ -14,7 +14,6 @@ import {DashboardTemplateModule} from "./templates/dashboard-template";
 @NgModule({
   declarations: [
     SharedUiLibComponent,
-
   ],
   imports: [
     AvatarModule,
@@ -40,4 +39,16 @@ import {DashboardTemplateModule} from "./templates/dashboard-template";
     DashboardTemplateModule
   ]
 })
-export class SharedUiLibModule { }
+export class SharedUiLibModule {
+
+  static forRoot(providers:IBaseCodeProviders):ModuleWithProviders<SharedUiLibModule>{
+    return {
+      ngModule: SharedUiLibModule,
+      providers:[providers.translator]
+    }
+  }
+}
+
+export interface IBaseCodeProviders {
+  translator: Provider
+}

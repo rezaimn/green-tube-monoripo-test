@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TranslocoModule, TranslocoService} from "@ngneat/transloco";
+import {TranslocoService} from "@ngneat/transloco";
 
 @Component({
   selector: 'app-root',

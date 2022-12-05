@@ -5,9 +5,9 @@ import {
   TranslocoLoader,
   TRANSLOCO_CONFIG,
   translocoConfig,
-  TranslocoModule
+  TranslocoModule, TranslocoService
 } from '@ngneat/transloco';
-import { Injectable, NgModule } from '@angular/core';
+import {APP_INITIALIZER, Injectable, NgModule} from '@angular/core';
 import {environment} from "../../environments/environment";
 
 @Injectable({ providedIn: 'root' })
@@ -34,7 +34,17 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         prodMode: environment.production,
       })
     },
-    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }
+    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+    {
+      provide: APP_INITIALIZER,
+      deps: [TranslocoService],
+      useFactory: (translocoService: TranslocoService) => (): Promise<Translation | undefined> => {
+        const defaultLang = 'fa';
+        translocoService.setActiveLang(defaultLang);
+        return translocoService.load(defaultLang).toPromise();
+      },
+      multi: true
+    }
   ]
 })
 export class TranslocoApp2RootModule {}

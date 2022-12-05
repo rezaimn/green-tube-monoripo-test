@@ -8,6 +8,7 @@ export class AppThreeTranslatorClass implements SharedUiTranslatorService {
   }
 
   translate(key: string | Array<string>, params?: Object): string {
+    console.log(key,'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',params)
     return this.transloco.translate(key, params);
   }
 

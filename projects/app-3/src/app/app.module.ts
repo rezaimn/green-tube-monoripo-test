@@ -18,7 +18,6 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TranslocoApp3RootModule,
     HttpClientModule,
     BaseCodeModule.forRoot({
       translator:{
@@ -26,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
         useClass:AppThreeTranslatorClass,
         deps:[TranslocoService]
       }
-    })
+    }),
+    TranslocoApp3RootModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
